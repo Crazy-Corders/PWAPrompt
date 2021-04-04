@@ -1,28 +1,33 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 body {
   width: 100vw;
   height: 100vh;
   display: grid;
   place-items: center;
-  overflow: hidden;
   font-family: 'Tahoma';
-  background-color: rgb(0, 0, 15);
 }
 
 #container {
-  width: 400px;
-  height: 500px;
+  width: 80vw;
+  max-width: 400px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgb(0, 0, 15);
 }
 
 #title {
   font-size: 30px;
   font-weight: 100;
-  margin-bottom: 30px;
+  text-align: center;
+  margin: 30px;
   color: rgba(255, 255, 255, 1);
 }
 
@@ -32,15 +37,15 @@ body {
 }
 
 li {
-  margin: 15px 0px;
+  padding: 10px 20px;
 }
 
 button {
   outline: none;
   border: none;
   width: 70%;
-  height: 30px;
-  margin-top: 30px;
+  height: 40px;
+  margin: 30px 0px;
   border-radius: 5px;
   color: white;
   background-color: rgb(30, 255, 0, 0.5);

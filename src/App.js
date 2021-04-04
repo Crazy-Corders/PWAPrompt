@@ -2,8 +2,12 @@ import { useState, useEffect } from 'react'
 
 import './App.css'
 
+import useServiceWorker from './useServiceWorker'
+
 export default function App () {
   const [promptInstall, setPromptInstall] = useState(null)
+
+  useServiceWorker()
 
   useEffect(() => {
     const handler = e => {

@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react'
 
-import './App.css'
+import styles from './styles'
+import example from './example'
 
-import useServiceWorker from './useServiceWorker'
-
-export default function App () {
+export default function App ({ title, description, customStyles }) {
   const [promptInstall, setPromptInstall] = useState(null)
-
-  useServiceWorker()
 
   useEffect(() => {
     const handler = e => {
@@ -32,19 +29,13 @@ export default function App () {
   }
 
   return (
-    <div id='container'>
-      <h1 id='title'>PROGRESSIVE WEB APP</h1>
-      <ul id='list'>
-        <li>Short loading time</li>
-        <li>Good performance in poor network conditions</li>
-        <li>Small size</li>
-        <li>App-like features (add to home screen, offline mode, push notifications)</li>
-        <li>Avoid app aggregators (Google Play, App Store, etc.)</li>
-        <li>Instant updates</li>
-      </ul>
-      <button onClick={onClick}>
-        Install
-      </button>
+    <div style={{...styles.body, ...customStyles?.body}}>
+      <div style={{...styles.background, ...customStyles?.background}}>
+        <h1 style={{...styles.title, ...customStyles?.title}}>{title ? title : example.title}</h1>
+        {description && <p style={{...styles.description, ...customStyles?.description}}>{description}</p>}
+        {!description && <example.description />}
+        <button style={{...styles.installButton, ...customStyles?.installButton}} onClick={onClick}> Install </button>
+      </div>
     </div>
   )
 }

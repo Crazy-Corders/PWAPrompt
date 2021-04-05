@@ -23,13 +23,13 @@ export default function useServiceWorker () {
       serviceWorker.register({ onUpdate: onServiceWorkerUpdate })
     }
     if (newVersionAvailable) {
-      return(
+      return (
         <div>
           <h1>A new version has been released</h1>
-          <h1>Version {require('../package.json').version}</h1>
+          <h1>Version {require('../../package.json').version}</h1>
           <button onClick={updateServiceWorker}>Update</button>
         </div>
       )
-    } // eslint-disable-next-line
+    }
   }, [newVersionAvailable])
 }

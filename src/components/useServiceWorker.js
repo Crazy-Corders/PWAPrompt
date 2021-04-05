@@ -24,7 +24,7 @@ export default function useServiceWorker () {
     }
   }, [newVersionAvailable])
 
-  if (true) {
+  if (newVersionAvailable) {
     return (
       <div>
         <h1>A new version has been released</h1>

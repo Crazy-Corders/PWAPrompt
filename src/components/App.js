@@ -4,11 +4,26 @@ import PWAPrompt from './PWAPrompt'
 
 export default function App ({ enablePWAPrompt, title, description, customStyles }) {
 
-  useServiceWorker()
+  const content = useServiceWorker(enablePWAPrompt)
 
   if (enablePWAPrompt) return <PWAPrompt title={title} description={description} customStyles={customStyles} />
 
   return (
-    <div></div>
+    <div>
+      {content}
+    </div>
   )
 }
+
+
+
+/*
+
+App.defaultProps = {
+  
+}
+ - Rename APP to index.js
+ - Remove example.js -> integrate with React.propTypes
+ - Move useServiceWorker and serviceWorkerRegistration inside hooks folder
+
+*/

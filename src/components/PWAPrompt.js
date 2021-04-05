@@ -34,7 +34,7 @@ export default function App ({ title, description, customStyles }) {
         <h1 style={{...styles.title, ...customStyles?.title}}>{title ? title : example.title}</h1>
         {description && <p style={{...styles.description, ...customStyles?.description}}>{description}</p>}
         {!description && <example.description />}
-        <button style={{...styles.installButton, ...customStyles?.installButton}} onClick={onClick}> Install </button>
+        <button style={{...styles.button, ...customStyles?.button}} onClick={onClick}> Install </button>
       </div>
     </div>
   )

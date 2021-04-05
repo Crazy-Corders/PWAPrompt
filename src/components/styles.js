@@ -32,7 +32,7 @@ const styles = {
     padding: '30px',
     margin: '0px'
   },
-  installButton: {
+  button: {
     outline: 'none',
     border: 'none',
     width: '70%',
